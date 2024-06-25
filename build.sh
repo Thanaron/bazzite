@@ -7,7 +7,7 @@ RELEASE="$(rpm -E %fedora)"
 curl --output-dir "/etc/yum.repos.d/" --remote-name \
     "https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-${RELEASE}/solopasha-hyprland-fedora-${RELEASE}.repo"
 
-wget https://downloads.1password.com/linux/keys/1password.asc -O /etc/pki/rpm-gpg/1password.asc
+curl -o /etc/pki/rpm-gpg/1password.asc https://downloads.1password.com/linux/keys/1password.asc
 
 cat > /etc/yum.repos.d/1password.repo << EOF
 [1password]
