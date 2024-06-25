@@ -20,7 +20,5 @@ gpgkey=file:///etc/pki/rpm-gpg/1password.asc
 EOF
 
 rpm-ostree install \
-            1password \
-            1password-cli \
-            papirus-icon-theme \
-            rsms-inter-fonts
+    papirus-icon-theme \
+    rsms-inter-fonts
