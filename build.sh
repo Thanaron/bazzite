@@ -7,11 +7,17 @@ RELEASE="$(rpm -E %fedora)"
 curl --output-dir "/etc/yum.repos.d/" --remote-name \
     "https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-${RELEASE}/solopasha-hyprland-fedora-${RELEASE}.repo"
 
-curl --output-dir "/etc/yum.repos.d/" --remote-name \
-    "https://downloads.1password.com/linux/rpm/stable/x86_64/1password-latest.rpm"
+wget https://downloads.1password.com/linux/keys/1password.asc -O /etc/pki/rpm-gpg/1password.asc
 
-curl --output-dir "/etc/yum.repos.d/" --remote-name \
-    "https://downloads.1password.com/linux/rpm/stable/x86_64/1password-cli-latest.x86_64.rpm"
+cat > /etc/yum.repos.d/1password.repo << EOF
+[1password]
+name=1Password Stable Channel
+baseurl=https://downloads.1password.com/linux/rpm/stable/\$basearch
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/1password.asc
+EOF
 
 rpm-ostree install \
             1password \
