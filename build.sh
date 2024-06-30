@@ -10,9 +10,9 @@ curl --output-dir "/etc/yum.repos.d/" --remote-name \
 
 mkdir -p /var/opt
 wget -q https://downloads.1password.com/linux/rpm/stable/x86_64/1password-latest.rpm
-sudo rpm -vih ./1password-latest.rpm
+sudo rpm -i ./1password-latest.rpm
 wget -q https://downloads.1password.com/linux/rpm/stable/x86_64/1password-cli-latest.x86_64.rpm
-rpm-ostree install ./1password-cli-latest.x86_64.rpm
+sudo rpm -i ./1password-cli-latest.x86_64.rpm
 
 rpm-ostree install \
     papirus-icon-theme \
