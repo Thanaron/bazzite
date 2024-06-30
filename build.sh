@@ -15,4 +15,4 @@ done
 rpm-ostree install \
     papirus-icon-theme \
     rsms-inter-fonts \
-    xivlauncher-rb
+    xivlauncher
