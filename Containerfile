@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/bazzite-gnome-nvidia:testing
+FROM ghcr.io/ublue-os/bazzite-gnome-nvidia:stable
 
 COPY build.sh /tmp/build.sh
 
